@@ -12,7 +12,7 @@ export default class apiRequests{
     }
     static createWallet(data){
         const url = URLGenerator.wallets()
-        return Axios.post(url, data)
+        return Axios.post(url, data, {headers:{'content-type':'application/json'}})
     }
     static showWalletDetails(id){
         const url = URLGenerator.wallet_actions(id)
@@ -24,6 +24,6 @@ export default class apiRequests{
     }
     static transferFunds(data){
         const url = URLGenerator.transferFunds(data)
-        return Axios.post(url, data)
+        return Axios.post(url, data, {headers:{'content-type':'application/json'}})
     }
 }

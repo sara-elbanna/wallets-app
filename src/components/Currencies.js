@@ -27,7 +27,7 @@ const { Column, ColumnGroup } = Table;
         return <div className='currencies'>
             <div className='container'>
                 <h1 style={{color:'#000000ad'}}>Available Currencies</h1>
-                <Table dataSource={dataSource}  >
+                <Table pagination={false} dataSource={dataSource}  >
                 <Column className='centered' title="Currency" dataIndex="currency" key="currency" />
                 <ColumnGroup title="Conversion Rates">
                     <Column title="fty" dataIndex="fty" key="fty" />

@@ -62,7 +62,7 @@ import TransferFundsModal from './TransferFundsModal';
                 title: '',
                 dataIndex: 'transfer',
                 key: 'transfer',
-                render: (text, item)=> <Button onClick={()=> this.setState({showTransferModal: true, senderId: item.id})}>Transfer</Button>
+                render: (text, item)=> <Button onClick={()=> this.setState({showTransferModal: true, senderAddress: item.address})}>Transfer</Button>
             },
             {
                 title: '',
@@ -82,7 +82,7 @@ import TransferFundsModal from './TransferFundsModal';
 
                 <Table size={'middle'} dataSource={this.props.walletsList} columns={columns} />
                 {this.state.showCreateWalletModal && <CreateWalletModal onClose={()=> this.setState({showCreateWalletModal: false})}/>}
-                {this.state.showTransferModal && <TransferFundsModal senderId={this.state.senderId} onClose={()=> this.setState({showTransferModal: false, senderId:''})}/>}
+                {this.state.showTransferModal && <TransferFundsModal senderAddress={this.state.senderAddress} onClose={()=> this.setState({showTransferModal: false, senderAddress:''})}/>}
             </div>           
         </div>
     }

@@ -27,7 +27,7 @@ class TransferFundsModal extends React.Component{
         console.log('state',this.state)
 
         let data = {
-            "sender": this.props.senderId,
+            "sender": this.props.senderAddress,
             "receiver": this.state.receiver,
             "amount": this.state.amount
         }
@@ -52,7 +52,7 @@ class TransferFundsModal extends React.Component{
                 <span>Transfer to:</span>
                 <Select style={{display:'block'}} onChange={(e)=>this.handleChangeSelect('receiver',e)}>
                     {this.props.walletsList.map (wallet =>{
-                        return <Select.Option key={wallet.id} value={wallet.id}>{wallet.id}</Select.Option>
+                        return <Select.Option key={wallet.id} value={wallet.address}>{wallet.id}</Select.Option>
                     })}
                 </Select>
             </div>
