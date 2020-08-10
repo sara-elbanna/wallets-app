@@ -29,7 +29,7 @@ class TransferFundsModal extends React.Component{
         let data = {
             "sender": this.props.senderAddress,
             "receiver": this.state.receiver,
-            "amount": parseInt(this.state.amount),
+            "amount": parseFloat(this.state.amount),
         }
         console.log('dataa',data)
         this.props.transferFunds(data)
